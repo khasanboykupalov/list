@@ -1,0 +1,19 @@
+{
+  "Users": "Foydalanuvchilar",
+  "Username": "Foydalanuvchi nomi",
+  "Name": "Ism",
+  "Country": "Mamlakat",
+  "Age": "Yosh",
+
+  "SkillsRating": "Ko‘nikmalar reytingi",
+  "ActivityRating": "Faollik reytingi",
+  "Kepcoin": "Kepcoin",
+  "LastSeen": "Oxirgi ko‘rindi",
+  "Streak": "Uzluksiz kunlar",
+  "Max": "Maxsimal",
+  "Contests": "Musobaqalar",
+  "Challenges": "Challengelar",
+
+  "From": "Dan",
+  "To": "Gacha"
+}

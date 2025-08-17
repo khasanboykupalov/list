@@ -1,0 +1,19 @@
+{
+  "Users": "Users",
+  "Username": "Username",
+  "Name": "Name",
+  "Country": "Country",
+  "Age": "Age",
+
+  "SkillsRating": "Skills Rating",
+  "ActivityRating": "Activity Rating",
+  "Kepcoin": "Kepcoin",
+  "LastSeen": "Last Seen",
+  "Streak": "Streak",
+  "Max": "Max",
+  "Contests": "Contests",
+  "Challenges": "Challenges",
+
+  "From": "From",
+  "To": "To"
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aaaaaaaaaaa": {
+    "Task": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/aaaaaaaaaaa",
+            "outputPath": "dist/Task",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -46,6 +46,8 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -84,10 +86,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "aaaaaaaaaaa:build:production"
+              "buildTarget": "Task:build:production"
             },
             "development": {
-              "buildTarget": "aaaaaaaaaaa:build:development"
+              "buildTarget": "Task:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -117,5 +119,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

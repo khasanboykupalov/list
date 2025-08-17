@@ -1,0 +1,70 @@
+.icon-info {
+  color: #3b82f6;
+}
+.icon-success {
+  color: #22c55e;
+}
+.icon-warning {
+  color: #f59e0b;
+}
+.icon-danger {
+  color: #ef4444;
+}
+
+.avatar-fallback {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.coin-icon {
+  margin-right: 6px;
+  color: #d97706;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fde68a 0%,
+    #fbbf24 50%,
+    #b45309 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4));
+  font-size: 0.9rem;
+}
+
+.coin-amount {
+  font-variant-numeric: tabular-nums;
+}
+
+.streak-cell {
+  font-size: 12px;
+}
+.streak-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.2;
+}
+.flame-red {
+  color: #ef4444;
+  filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.35));
+}
+.flame-blue {
+  color: #3b82f6;
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.35));
+}
+
+.skills-cell {
+  padding: 8px 12px;
+  border: 1px solid #3b82f6;
+  border-radius: 12px;
+  color: #3b82f6;
+}

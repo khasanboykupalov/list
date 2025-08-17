@@ -1,0 +1,136 @@
+<p-table
+  [value]="users"
+  [paginator]="true"
+  [rows]="pageSize"
+  [first]="(page - 1) * pageSize"
+  [totalRecords]="total"
+  [lazy]="true"
+  [lazyLoadOnInit]="true"
+  [rowsPerPageOptions]="[10, 20, 50]"
+  sortMode="single"
+  (onLazyLoad)="onLazyLoad($event)"
+  [responsiveLayout]="'scroll'"
+>
+  <ng-template pTemplate="header">
+    <tr style="height: 30px">
+      <th pSortableColumn="id">
+        {{ "Username" | translate }} <p-sortIcon field="id"></p-sortIcon>
+      </th>
+      <th pSortableColumn="skills_rating">
+        {{ "SkillsRating" | translate }}
+        <p-sortIcon field="skills_rating"></p-sortIcon>
+      </th>
+      <th pSortableColumn="activity_rating">
+        {{ "ActivityRating" | translate }}
+        <p-sortIcon field="activity_rating"></p-sortIcon>
+      </th>
+      <th pSortableColumn="contests_rating__rating">
+        {{ "Contests" | translate }}
+        <p-sortIcon field="contests_rating__rating"></p-sortIcon>
+      </th>
+      <th pSortableColumn="challenges_rating__rating">
+        {{ "Challenges" | translate }}
+        <p-sortIcon field="challenges_rating__rating"></p-sortIcon>
+      </th>
+      <th pSortableColumn="streak">
+        {{ "Streak" | translate }} <p-sortIcon field="streak"></p-sortIcon>
+      </th>
+      <th pSortableColumn="kepcoin">
+        {{ "Kepcoin" | translate }} <p-sortIcon field="kepcoin"></p-sortIcon>
+      </th>
+      <th pSortableColumn="last_seen">
+        {{ "LastSeen" | translate }} <p-sortIcon field="last_seen"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-user>
+    <tr style="height: 40px">
+      <td>
+        <div style="display: flex; align-items: center; gap: 8px">
+          <img
+            *ngIf="user.avatar; else fallback"
+            [src]="user.avatar"
+            width="30"
+            height="30"
+            style="border-radius: 50%"
+            (error)="user.avatar = ''"
+          />
+
+          <ng-template #fallback>
+            <div class="avatar-fallback">{{ initial(user) }}</div>
+          </ng-template>
+
+          <div>
+            <div style="font-weight: bold; font-size: 13px">
+              {{ user.username }}
+            </div>
+            <div style="font-size: 11px; color: gray">
+              {{ user.firstName }} {{ user.lastName }}
+            </div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <span class="skills-cell">
+          {{ user.skillsRating }}
+        </span>
+      </td>
+      <td>
+        <span class="skills-cell">
+          {{ user.activityRating }}
+        </span>
+      </td>
+      <td class="streak-cell">
+        <div class="streak-line">
+          <i
+            class="pi pi-info-circle"
+            [class.flame-blue]="user.streak === 0"
+            [class.flame-red]="user.streak > 0"
+            aria-hidden="true"
+          ></i>
+          {{ user.streak }}
+        </div>
+
+        <div class="streak-line">
+          <i
+            class="pi pi-verified"
+            [class.flame-blue]="(user.maxStreak ?? 0) === 0"
+            [class.flame-red]="(user.maxStreak ?? 0) > 0"
+            aria-hidden="true"
+          ></i>
+          {{ user.maxStreak }}
+        </div>
+      </td>
+
+      <td>
+        <i
+          [ngClass]="[
+            user.contestsIcon,
+            'icon-' + (user.contestsSeverity || 'info')
+          ]"
+          style="margin-right: 6px"
+        ></i>
+        <span>{{ user.contests }}</span>
+      </td>
+      <td>
+        <p-badge
+          *ngIf="user.challengesRank"
+          [value]="user.challengesRank"
+          [severity]="user.challengesSeverity"
+        >
+        </p-badge>
+        <span style="margin-left: 6px">{{ user.challenges }}</span>
+      </td>
+      <td class="kepcoin-cell">
+        <i
+          class="pi pi-bitcoin coin-icon"
+          aria-hidden="true"
+          style="margin-right: 6px"
+        ></i>
+        <span class="coin-amount">{{ user.kepcoin }}</span>
+      </td>
+      <td>{{ user.lastSeen | relativeI18n }}</td>
+    </tr>
+  </ng-template>
+</p-table>

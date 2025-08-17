@@ -1,0 +1,49 @@
+<form [formGroup]="form" (keydown.enter)="onEnter($event)" class="filters-wrap">
+  <div class="filter-header">
+    <span class="title">{{ 'Users' | translate }}: {{ total }}</span>
+
+    <div class="lang">
+      <p-dropdown
+        formControlName="lang"
+        [options]="Languages"
+        optionLabel="label"
+        optionValue="value">
+      </p-dropdown>
+    </div>
+  </div>
+
+  <div class="filters-grid">
+    <div class="field">
+      <label for="nik">{{ 'Username' | translate }}</label>
+      <input id="nik" pInputText formControlName="username" />
+    </div>
+
+    <div class="field">
+      <label for="username">{{ 'Name' | translate }}</label>
+      <input id="username" pInputText formControlName="first_name" />
+    </div>
+
+    <div class="field">
+      <label for="country">{{ 'Country' | translate }}</label>
+      <p-dropdown
+        id="country"
+        formControlName="country"
+        [options]="countries"
+        optionLabel="label"
+        optionValue="value"
+        [showClear]="true"
+        placeholder="{{ 'Country' | translate }}"
+        appendTo="body">
+      </p-dropdown>
+    </div>
+
+    <div class="field">
+      <label>{{ 'Age' | translate }}</label>
+      <div class="age-range">
+        <input type="number" pInputText formControlName="age_from" />
+        <i class="pi pi-minus sep"></i>
+        <input type="number" pInputText formControlName="age_to" />
+      </div>
+    </div>
+  </div>
+</form>

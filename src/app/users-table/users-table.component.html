@@ -1,0 +1,31 @@
+<div class="card-like">
+  <app-user-filter
+    [total]="totalUsers"
+    (filtersChange)="onFiltersChange($event)">
+  </app-user-filter>
+
+  @if (loading) {
+    <div class="skeleton-wrap">
+      <p-skeleton height="36px" styleClass="mb-2"></p-skeleton>
+      @for (_ of skeletonRows; track $index) {
+        <p-skeleton height="48px" styleClass="mb-2"></p-skeleton>
+      }
+    </div>
+  } @else {
+    @if (users.length > 0) {
+      <app-user-list
+        [users]="users"
+        [total]="totalUsers"
+        [page]="page"
+        [pageSize]="pageSize"
+        (stateChange)="onStateChange($event)">
+      </app-user-list>
+    } @else {
+      <div class="empty-wrap">
+        <i class="pi pi-search empty-icon" aria-hidden="true"></i>
+        <div class="empty-title">Hech narsa topilmadi</div>
+        <div class="empty-sub">Filtrlarni o‘zgartirib ko‘ring</div>
+      </div>
+    }
+  }
+</div>

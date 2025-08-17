@@ -1,0 +1,19 @@
+{
+  "Users": "Пользователи",
+  "Username": "Имя пользователя",
+  "Name": "Имя",
+  "Country": "Страна",
+  "Age": "Возраст",
+
+  "SkillsRating": "Рейтинг навыков",
+  "ActivityRating": "Рейтинг активности",
+  "Kepcoin": "Kepcoin",
+  "LastSeen": "Был(а) в сети",
+  "Streak": "Серия",
+  "Max": "Макс",
+  "Contests": "Соревнования",
+  "Challenges": "Челленджи",
+
+  "From": "От",
+  "To": "До"
+}

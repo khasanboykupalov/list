@@ -1,0 +1,51 @@
+.filters-wrap{
+  padding: 16px;
+  margin: 16px 33px;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.filter-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+.title{ font-weight:600; }
+
+.filters-grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+}
+
+.field{ display:flex; flex-direction:column; }
+.field label{ margin-bottom:6px; font-weight:500; }
+
+:host ::ng-deep .p-inputtext,
+:host ::ng-deep .p-dropdown{
+  width:100%;
+}
+
+.age-range{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap:8px;
+}
+.sep{ font-size:12px; color:#6b7280; }
+
+@media (max-width: 1200px){
+  .filters-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (max-width: 900px){
+  .filters-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 540px){
+  .filters-grid{ grid-template-columns: 1fr; }
+  .lang{ width:100%; }
+  :host ::ng-deep .lang .p-dropdown{ width:100%; }
+}
